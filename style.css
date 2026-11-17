@@ -1,72 +1,26 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    font-family: 'Arial', sans-serif;
+  display: flex; justify-content: center; align-items: center; min-height: 100vh;
+  padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: Arial, sans-serif;
 }
-
 .calculator {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    width: 320px;
+  background: #fff; padding: 22px; border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25); width: min(100%, 360px);
 }
-
+h1 { margin-bottom: 14px; color: #333; text-align: center; font-size: 1.25rem; }
 .display {
-    background: #222;
-    color: #fff;
-    font-size: 2em;
-    padding: 20px;
-    text-align: right;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    min-height: 60px;
-    word-wrap: break-word;
+  background: #222; color: #fff; font-size: 2em; padding: 20px; text-align: right;
+  border-radius: 7px; margin-bottom: 12px; min-height: 68px; overflow-wrap: anywhere;
 }
-
-.buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-}
-
+.buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 button {
-    padding: 20px;
-    font-size: 1.2em;
-    border: none;
-    background: #f0f0f0;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s;
+  padding: 18px 10px; font-size: 1.15em; border: 0; background: #e3f2fd;
+  border-radius: 7px; cursor: pointer; transition: background .2s, transform .2s;
 }
-
-button:hover {
-    background: #e0e0e0;
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-.equals {
-    background: #667eea;
-    color: white;
-    grid-row: span 2;
-}
-
-.equals:hover {
-    background: #5568d3;
-}
-
-.zero {
-    grid-column: span 2;
-}
+button:hover { background: #bbdefb; }
+button:active { transform: scale(.96); }
+button:focus-visible { outline: 3px solid #1565c0; outline-offset: 2px; }
+.equals { background: #2196f3; color: #fff; grid-row: span 2; }
+.equals:hover { background: #1976d2; }
+.zero { grid-column: span 2; }
