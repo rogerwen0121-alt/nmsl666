@@ -1,10 +1,6 @@
-# nmsl666
-Simple calculator web application
+# nmsl666｜計算機專案
 
-## Features
-- Basic arithmetic
-- Percentage calculation
-- Memory functions (M+, M-, MR, MC)
-- Scientific operations through a dropdown menu
+支援基本四則運算與百分比計算。後續版本將加入記憶與科學計算功能。
 
-Open `index.html` in a browser to use the calculator.
+## 使用方式
+直接以瀏覽器開啟 `index.html`。
