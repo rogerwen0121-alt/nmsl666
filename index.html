@@ -1,1 +1,72 @@
-<!doctype html><html lang="zh-TW"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>計算機</title><link rel="stylesheet" href="style.css"></head><body><main class="calculator"><h1>計算機</h1><div id="display" class="display">0</div><div class="memory-buttons"><button onclick="memoryAdd()">M+</button><button onclick="memorySubtract()">M-</button><button onclick="memoryRecall()">MR</button><button onclick="memoryClear()">MC</button></div><div class="scientific-dropdown"><select id="scientificOp" onchange="applyScientificOp()"><option value="">選擇科學計算...</option><option value="sin">sin</option><option value="cos">cos</option><option value="tan">tan</option><option value="log">log</option><option value="sqrt">√</option><option value="pow">x²</option></select></div><div class="buttons"><button onclick="clearDisplay()">C</button><button onclick="calculatePercentage()">%</button><button onclick="appendToDisplay('/')">/</button><button onclick="deleteLast()">←</button><button onclick="appendToDisplay('7')">7</button><button onclick="appendToDisplay('8')">8</button><button onclick="appendToDisplay('9')">9</button><button onclick="appendToDisplay('*')">*</button><button onclick="appendToDisplay('4')">4</button><button onclick="appendToDisplay('5')">5</button><button onclick="appendToDisplay('6')">6</button><button onclick="appendToDisplay('-')">-</button><button onclick="appendToDisplay('1')">1</button><button onclick="appendToDisplay('2')">2</button><button onclick="appendToDisplay('3')">3</button><button class="equals" onclick="calculate()">=</button><button class="zero" onclick="appendToDisplay('0')">0</button><button onclick="appendToDisplay('.')">.</button><button onclick="appendToDisplay('+')">+</button></div></main><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#20232b">
+  <title>多功能計算機</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator">
+    <header class="calculator-header">
+      <h1>多功能計算機</h1>
+      <p>四則運算・記憶功能・科學計算</p>
+    </header>
+
+    <div id="display" class="display" aria-live="polite">0</div>
+
+    <section class="memory-buttons" aria-label="記憶功能">
+      <button type="button" onclick="memoryAdd()">M+</button>
+      <button type="button" onclick="memorySubtract()">M-</button>
+      <button type="button" onclick="memoryRecall()">MR</button>
+      <button type="button" onclick="memoryClear()">MC</button>
+    </section>
+
+    <section class="scientific-section" aria-label="科學計算">
+      <label for="scientificOp">科學計算（角度制）</label>
+      <div class="scientific-controls">
+        <select id="scientificOp">
+          <option value="">選擇運算</option>
+          <option value="sin">sin</option>
+          <option value="cos">cos</option>
+          <option value="tan">tan</option>
+          <option value="log">log</option>
+          <option value="sqrt">平方根 √</option>
+          <option value="pow">平方 x²</option>
+        </select>
+        <button type="button" class="run-scientific" onclick="applyScientificOp()">執行</button>
+      </div>
+    </section>
+
+    <section class="buttons" aria-label="計算機按鍵">
+      <button type="button" class="utility" onclick="clearDisplay()">AC</button>
+      <button type="button" class="utility" onclick="deleteLast()" aria-label="刪除">⌫</button>
+      <button type="button" class="utility percent" onclick="calculatePercentage()">%</button>
+      <button type="button" class="operator" onclick="appendToDisplay('/')">÷</button>
+
+      <button type="button" onclick="appendToDisplay('7')">7</button>
+      <button type="button" onclick="appendToDisplay('8')">8</button>
+      <button type="button" onclick="appendToDisplay('9')">9</button>
+      <button type="button" class="operator" onclick="appendToDisplay('*')">×</button>
+
+      <button type="button" onclick="appendToDisplay('4')">4</button>
+      <button type="button" onclick="appendToDisplay('5')">5</button>
+      <button type="button" onclick="appendToDisplay('6')">6</button>
+      <button type="button" class="operator" onclick="appendToDisplay('-')">−</button>
+
+      <button type="button" onclick="appendToDisplay('1')">1</button>
+      <button type="button" onclick="appendToDisplay('2')">2</button>
+      <button type="button" onclick="appendToDisplay('3')">3</button>
+      <button type="button" class="operator" onclick="appendToDisplay('+')">+</button>
+
+      <button type="button" class="zero" onclick="appendToDisplay('0')">0</button>
+      <button type="button" onclick="appendToDisplay('.')">.</button>
+      <button type="button" class="equals" onclick="calculate()">=</button>
+    </section>
+
+    <footer class="calculator-footer">支援鍵盤輸入：0–9・+ − × ÷・Enter・Backspace・Esc</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
